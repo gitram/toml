@@ -36,7 +36,7 @@ module TOML
     }
     
     rule(:key_value) { 
-      space >> key.as(:key) >>
+      space >> table_name.as(:key) >>
       space >> str("=") >>
       space >> value.as(:value) >>
       space >> comment.maybe >> newline >> all_space
