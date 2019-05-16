@@ -9,6 +9,8 @@ module TOML
       begin
         tree = Parslet.new.parse(markup)
       rescue Parslet::ParseFailed => failure
+        puts failure
+        puts failure.cause
         puts failure.cause.ascii_tree
       end
       
